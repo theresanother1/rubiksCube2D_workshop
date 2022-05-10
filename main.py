@@ -86,6 +86,7 @@ def rotate_cube_right_side_90_degrees_forwards():
         if pages == 3:
             continue
         else:
+            
             if pages != 0:
                 for position in range(0,9):
                     if (rubiks_cube[pages][position][1] == 2):

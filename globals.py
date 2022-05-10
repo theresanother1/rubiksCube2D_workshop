@@ -18,6 +18,7 @@ class colors:
     WHITEBACKGROUND = '\033[107m'
     EMPTYBACKGROUND = '\033[108m'
 
+print("test")
 rubiks_cube = np.array([
         # orange now pink side
         [[3, 0, 0], [3, 1, 0], [3, 2, 0], [3, 0, 1], [3, 1, 1], [3, 2, 1], [3, 0, 2], [3, 1, 2], [3, 2, 2]],
