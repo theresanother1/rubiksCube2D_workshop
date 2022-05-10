@@ -10,7 +10,6 @@ class colors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
     BLUEBACKGROUND = '\033[104m'
     REDBACKGROUND = '\033[101m'
     ORANGENOWPINKBACKGROUND = '\033[105m'
