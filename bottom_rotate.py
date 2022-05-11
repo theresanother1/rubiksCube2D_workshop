@@ -133,12 +133,12 @@ def rotate_cube_bottom_90_degrees_right(rubiks_cube_tensor):
                     print("\r\n")
 
         elif pages == 3:
-
+            x=2
             for position3 in range(0, 9):
                 if rubiks_cube_tensor[pages][position3][2] == 2:
                     # cur = rubiks_cube_tensor[pages][position1]
                     # sh = rubiks_cube_tensor[pages + 1][position1]
-                    rubiks_cube_tensor[pages, position3, 0].assign(rubiks_cube_tensor[pages-2
-                                                                                      ][position3][0])
+                    rubiks_cube_tensor[pages, position3, 0].assign(rubiks_cube_tensor[pages-2][x][0])
+                    x = x - 1
                     #rubiks_cube_tensor[pages, position3, 0].assign(rubiks_cube_tensor[pages - 1][x][0])
 

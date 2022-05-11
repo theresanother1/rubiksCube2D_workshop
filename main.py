@@ -1,4 +1,4 @@
-import numpy as np
+
 import tensorflow as tf
 import globals as glob
 import right_side_rotate as right
@@ -62,6 +62,7 @@ def print_complete_rubiks_cube():
             color_picking(rubiks_cube_tensor[page][position][0])
 
     print("\r\n")
+
 
 
 def color_picking(number):
