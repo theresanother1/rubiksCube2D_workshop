@@ -25,16 +25,14 @@ def rotate_cube_right_side_90_degrees_forwards(rubiks_cube_tensor):
         if pages == 3:
             continue
         if pages == 2 or pages == 1 or pages == 4:
-            for position in range(0, 9):
-                if rubiks_cube_tensor[pages][position][1] == 2:
-                    if pages - 1 == 3:
-                        rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages - 2][position][0])
-                    else:
-                        rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages - 1][position][0])
+            for position in range(2, 9, 3):
+                if pages - 1 == 3:
+                    rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages - 2][position][0])
+                else:
+                    rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages - 1][position][0])
         elif pages == 0:
-            for position in range(0, 9):
-                if rubiks_cube_tensor[pages][position][1] == 2:
-                    rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
+            for position in range(2, 9, 3):
+                rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
 
 
 def rotate_cube_right_side_90_degrees_backwards(rubiks_cube_tensor):
@@ -60,15 +58,12 @@ def rotate_cube_right_side_90_degrees_backwards(rubiks_cube_tensor):
                     rubiks_cube_tensor[pages, position, 0].assign(save_side[positional_cnt3][0])
                     positional_cnt3 = positional_cnt3 - 3
         if pages == 2 or pages == 1 or pages == 0:
-            for position in range(0, 9):
-                if rubiks_cube_tensor[pages][position][1] == 2:
-                    # avoid values from page 3, as they are not needed in this angle
-                    if pages + 1 == 3:
-                        rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages + 2][position][0])
-                    else:
-                        rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages + 1][position][0])
-                
+            for position in range(2, 9, 3):
+                if pages + 1 == 3:
+                    rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages + 2][position][0])
+                else:
+                    rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages + 1][position][0])
+
         elif pages == 4:
-            for position in range(0, 9):
-                if rubiks_cube_tensor[pages][position][1] == 2:
-                    rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
+            for position in range(2, 9, 3):
+                rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
