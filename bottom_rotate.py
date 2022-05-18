@@ -1,7 +1,20 @@
+# ------------------------------------------------------------------
+# Filename:    bottom_rotate.py
+# ------------------------------------------------------------------
+# File description:
+# Provides functions for rotating the bottom side of the Rubik's Cube.
+# ------------------------------------------------------------------
+
+# ------------------------------------------------------
+# Modules to import
+# ------------------------------------------------------
 import tensorflow as tf
 import globals as glob
 
 
+# ---------------------------------------------------------------
+# def rotate_cube_bottom_90_degrees_left(rubiks_cube_tensor)
+# ---------------------------------------------------------------
 def rotate_cube_bottom_90_degrees_left(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[1])  # save color of backside before assigning new values
     save_bottom = tf.Variable(rubiks_cube_tensor[0])  # save color of bottom to rotate the values
@@ -30,6 +43,9 @@ def rotate_cube_bottom_90_degrees_left(rubiks_cube_tensor):
                 x -= 1
 
 
+# ---------------------------------------------------------------
+# def rotate_cube_bottom_90_degrees_right(rubiks_cube_tensor)
+# ---------------------------------------------------------------
 def rotate_cube_bottom_90_degrees_right(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[5])
     save_bottom = tf.Variable(rubiks_cube_tensor[0])
@@ -55,9 +71,3 @@ def rotate_cube_bottom_90_degrees_right(rubiks_cube_tensor):
 
         elif pages == 0:  # bottom page needs to be rotated
             glob.rotate_page_vals_index_end(rubiks_cube_tensor=rubiks_cube_tensor, save_side=save_bottom, pages=pages)
-
-
-
-
-
-

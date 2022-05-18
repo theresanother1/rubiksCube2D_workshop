@@ -1,7 +1,20 @@
+# ------------------------------------------------------------------
+# Filename:    top_rotate.py
+# ------------------------------------------------------------------
+# File description:
+# Provides functions for rotating top side of the Rubik's Cube.
+# ------------------------------------------------------------------
+
+# ------------------------------------------------------
+# Modules to import
+# ------------------------------------------------------
 import tensorflow as tf
 import globals as glob
 
 
+# ---------------------------------------------------------------
+# def rotate_cube_top_90_degrees_left(rubiks_cube_tensor)
+# ---------------------------------------------------------------
 def rotate_cube_top_90_degrees_left(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[1])
     save_top = tf.Variable(rubiks_cube_tensor[2])
@@ -26,6 +39,9 @@ def rotate_cube_top_90_degrees_left(rubiks_cube_tensor):
                 x -= 1
 
 
+# ---------------------------------------------------------------
+# def rotate_cube_top_90_degrees_right(rubiks_cube_tensor)
+# ---------------------------------------------------------------
 def rotate_cube_top_90_degrees_right(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[5])
     save_top = tf.Variable(rubiks_cube_tensor[2])
@@ -48,5 +64,3 @@ def rotate_cube_top_90_degrees_right(rubiks_cube_tensor):
             for position2 in range(6, 9):
                 rubiks_cube_tensor[pages, position2, 0].assign(save_color[x][0])
                 x -= 1
-
-

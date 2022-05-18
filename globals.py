@@ -1,6 +1,21 @@
+# ------------------------------------------------------------------
+# Filename:    globals.py
+# ------------------------------------------------------------------
+# File description:
+# Provides a set of variables and functions that are globally needed for 
+# the manipulation and display of the Rubik's Cube, such as the definition
+# of the Cube as a Tensor, color definitions, etc.
+# ------------------------------------------------------------------
+
+# ------------------------------------------------------
+# Modules to import
+# ------------------------------------------------------
 import tensorflow as tf
 
 
+# ---------------------------------------------------------------
+# class colors
+# ---------------------------------------------------------------
 class colors:
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -13,6 +28,9 @@ class colors:
     WHITEBACKGROUND = '\033[107m'
 
 
+# ---------------------------------------------------------------
+# rubiks_cube
+# ---------------------------------------------------------------
 rubiks_cube = tf.Variable([
     # orange now pink side
     [[3, 0, 0], [3, 1, 0], [3, 2, 0], [3, 0, 1], [3, 1, 1], [3, 2, 1], [3, 0, 2], [3, 1, 2], [3, 2, 2]],
@@ -29,6 +47,9 @@ rubiks_cube = tf.Variable([
 ])
 
 
+# ---------------------------------------------------------------
+# def rotate_page_values_index_start(rubiks_cube_tensor, save_side, pages)
+# ---------------------------------------------------------------
 def rotate_page_values_index_start(rubiks_cube_tensor, save_side, pages):
     positional_cnt1 = 2
     positional_cnt2 = 1
@@ -47,6 +68,9 @@ def rotate_page_values_index_start(rubiks_cube_tensor, save_side, pages):
             positional_cnt3 = positional_cnt3 + 3
 
 
+# ---------------------------------------------------------------
+# def rotate_page_vals_index_end(rubiks_cube_tensor, save_side, pages)
+# ---------------------------------------------------------------
 def rotate_page_vals_index_end(rubiks_cube_tensor, save_side, pages):
     positional_cnt1 = 6
     positional_cnt2 = 7

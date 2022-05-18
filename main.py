@@ -1,3 +1,13 @@
+# ------------------------------------------------------------------
+# Filename:    main.py
+# ------------------------------------------------------------------
+# File description:
+# Run this file to manipulate & print the Rubik's Cube.
+# ------------------------------------------------------------------
+
+# ------------------------------------------------------
+# Modules to import
+# ------------------------------------------------------
 import tensorflow as tf
 import globals as glob
 import right_side_rotate as right
@@ -5,9 +15,16 @@ import left_side_rotate as left
 import top_rotate as top
 import bottom_rotate as bottom
 
+# ------------------------------------------------------
+# Global variables
+# ------------------------------------------------------
+
 rubiks_cube_tensor = glob.rubiks_cube
 
 
+# ---------------------------------------------------------------
+# def print_complete_rubiks_cube()
+# ---------------------------------------------------------------
 def print_complete_rubiks_cube():
     # print page by page
     for page in range(0, 3):
@@ -60,6 +77,9 @@ def print_complete_rubiks_cube():
     print("\r\n")
 
 
+# ---------------------------------------------------------------
+# def color_picking(number)
+# ---------------------------------------------------------------
 def color_picking(number):
     if number == 0:
         print(glob.colors.BLUEBACKGROUND + "     " + glob.colors.ENDC, end=" ")
@@ -75,6 +95,9 @@ def color_picking(number):
         print(glob.colors.WHITEBACKGROUND + "     " + glob.colors.ENDC, end=" ")
 
 
+# ---------------------------------------------------------------
+# def print_menu()
+# ---------------------------------------------------------------
 def print_menu():
     print(glob.colors.OKGREEN + "rotate right side of the cube forward:         1")
     print("rotate right side of the cube backwards:       2")
@@ -88,13 +111,20 @@ def print_menu():
     print("Quit the game:                                 10" + glob.colors.ENDC)
 
 
+# ---------------------------------------------------------------
+# def main()
+# ---------------------------------------------------------------
 def main():
-    # print(rubiks_cube_tensor)
+    # ------------------------------------------------------
+    # -- Start of script run actions
+    # ------------------------------------------------------
     print("Welcome to Rubiks Cube: ")
     print_complete_rubiks_cube()
     print_menu()
     user_input = input("Please enter a number for your actions: \r\n")
-
+    # ------------------------------------------------------
+    # -- Main script run actions
+    # ------------------------------------------------------
     run = True
     while run:
         if user_input == "1":
@@ -150,5 +180,13 @@ def main():
             user_input = input("Please choose a number shown in the menu (0 - 10) \r\n")
 
 
+# ------------------------------------------------------
+# -- End of script run actions
+# ------------------------------------------------------
+
 if __name__ == '__main__':
     main()
+
+# ---------------------------------------------------------------
+# End of file
+# ---------------------------------------------------------------

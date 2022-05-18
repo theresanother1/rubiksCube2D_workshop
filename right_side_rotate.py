@@ -1,7 +1,21 @@
+# ------------------------------------------------------------------
+# Filename:    right_side_rotate.py
+# ------------------------------------------------------------------
+# File description:
+# Provides functions for rotating the right side of the Rubik's Cube.
+# ------------------------------------------------------------------
+
+# ------------------------------------------------------
+# Modules to import
+# ------------------------------------------------------
+
 import tensorflow as tf
 import globals as glob
 
 
+# ---------------------------------------------------------------
+# def rotate_cube_right_side_90_degrees_forwards(rubiks_cube_tensor)
+# ---------------------------------------------------------------
 def rotate_cube_right_side_90_degrees_forwards(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[4])
     save_side = tf.Variable(rubiks_cube_tensor[5])
@@ -22,6 +36,9 @@ def rotate_cube_right_side_90_degrees_forwards(rubiks_cube_tensor):
                 rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
 
 
+# ---------------------------------------------------------------
+# def rotate_cube_right_side_90_degrees_backwards(rubiks_cube_tensor)
+# ---------------------------------------------------------------
 def rotate_cube_right_side_90_degrees_backwards(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[0])
     save_side = tf.Variable(rubiks_cube_tensor[5])
