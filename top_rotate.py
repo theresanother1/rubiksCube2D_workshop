@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------
 # Filename:    top_rotate.py
+# Author: Theresa Spiel
 # ------------------------------------------------------------------
 # File description:
 # Provides functions for rotating top side of the Rubik's Cube.

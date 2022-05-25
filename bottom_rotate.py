@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------
 # Filename:    bottom_rotate.py
+# Author: Theresa Spiel
 # ------------------------------------------------------------------
 # File description:
 # Provides functions for rotating the bottom side of the Rubik's Cube.

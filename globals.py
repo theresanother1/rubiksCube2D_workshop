@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------
 # Filename:    globals.py
+# Author: Theresa Spiel
 # ------------------------------------------------------------------
 # File description:
 # Provides a set of variables and functions that are globally needed for 

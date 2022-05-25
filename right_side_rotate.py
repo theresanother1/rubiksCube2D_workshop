@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------
 # Filename:    right_side_rotate.py
+# Author: Theresa Spiel
 # ------------------------------------------------------------------
 # File description:
 # Provides functions for rotating the right side of the Rubik's Cube.

@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------
 # Filename:    left_side_rotate.py
+# Author: Theresa Spiel
 # ------------------------------------------------------------------
 # File description:
 # Provides functions for rotating the left of the Rubik's Cube.

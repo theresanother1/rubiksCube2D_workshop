@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------
 # Filename:    main.py
+# Author: Theresa Spiel
 # ------------------------------------------------------------------
 # File description:
 # Run this file to manipulate & print the Rubik's Cube.
@@ -118,8 +119,12 @@ def main():
     # ------------------------------------------------------
     # -- Start of script run actions
     # ------------------------------------------------------
+    # print(rubiks_cube_tensor)
+    # print(rubiks_cube_tensor[0])
+    # print(rubiks_cube_tensor[0][0])
+    # print_complete_rubiks_cube()
     print("Welcome to Rubiks Cube: ")
-    print_complete_rubiks_cube()
+    print("\r\n")
     print_menu()
     user_input = input("Please enter a number for your actions: \r\n")
     # ------------------------------------------------------
