@@ -21,18 +21,20 @@ def rotate_cube_right_side_90_degrees_forwards(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[4])
     save_side = tf.Variable(rubiks_cube_tensor[5])
     for pages in range(5, -1, -1):
-        if pages == 5:
+        if pages == 5:  # right side gets rotated
             glob.rotate_page_values_index_start(rubiks_cube_tensor=rubiks_cube_tensor, save_side=save_side, pages=pages)
 
-        elif pages == 3:
+        elif pages == 3:  # left side stays the same
             continue
-        if pages == 2 or pages == 1 or pages == 4:
+
+        elif pages == 2 or pages == 1 or pages == 4:  # move colors
             for position in range(2, 9, 3):
                 if pages - 1 == 3:
                     rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages - 2][position][0])
                 else:
                     rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages - 1][position][0])
-        elif pages == 0:
+
+        elif pages == 0:        # reassign saved values
             for position in range(2, 9, 3):
                 rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
 
@@ -44,19 +46,19 @@ def rotate_cube_right_side_90_degrees_backwards(rubiks_cube_tensor):
     save_color = tf.Variable(rubiks_cube_tensor[0])
     save_side = tf.Variable(rubiks_cube_tensor[5])
     for pages in range(0, 6):
-        if pages == 2 or pages == 1 or pages == 0:
+        if pages == 2 or pages == 1 or pages == 0:  # reassign the colors
             for position in range(2, 9, 3):
                 if pages + 1 == 3:
                     rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages + 2][position][0])
                 else:
                     rubiks_cube_tensor[pages, position, 0].assign(rubiks_cube_tensor[pages + 1][position][0])
 
-        elif pages == 3:
+        elif pages == 3:    # left side stays the same
             continue
 
-        elif pages == 4:
+        elif pages == 4:    # reassign saved values
             for position in range(2, 9, 3):
                 rubiks_cube_tensor[pages, position, 0].assign(save_color[position][0])
 
-        elif pages == 5:
+        elif pages == 5:    # rotate right side
             glob.rotate_page_vals_index_end(rubiks_cube_tensor=rubiks_cube_tensor, save_side=save_side, pages=pages)

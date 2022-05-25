@@ -61,7 +61,7 @@ def rotate_page_values_index_start(rubiks_cube_tensor, save_side, pages):
             positional_cnt1 = positional_cnt1 + 3
 
         elif rubiks_cube_tensor[pages][position][2] == 1:
-            rubiks_cube_tensor[pages, position, 0].assign(save_side[positional_cnt2][0])  #
+            rubiks_cube_tensor[pages, position, 0].assign(save_side[positional_cnt2][0])
             positional_cnt2 = positional_cnt2 + 3
 
         elif rubiks_cube_tensor[pages][position][2] == 2:
@@ -82,7 +82,7 @@ def rotate_page_vals_index_end(rubiks_cube_tensor, save_side, pages):
             positional_cnt1 = positional_cnt1 - 3
 
         elif rubiks_cube_tensor[pages][position][2] == 1:
-            rubiks_cube_tensor[pages, position, 0].assign(save_side[positional_cnt2][0])  #
+            rubiks_cube_tensor[pages, position, 0].assign(save_side[positional_cnt2][0])
             positional_cnt2 = positional_cnt2 - 3
 
         elif rubiks_cube_tensor[pages][position][2] == 2:
