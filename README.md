@@ -4,7 +4,7 @@ This is a little Rubik's Cube Manipulation Program that was created by me in reg
 # #Translating the Cube into 2D
 The most important part was the translation of the 3D cube into the 2D tensor form, which could then be accessed by the program, implemented as a tf.Tensor Variable. 
 
-# #User Interaction
+'User Interaction'
 After the script is started, the print\_menu() function is called and a while loop runs, containing an If/Elif statement, which selects the actions taken after the user inputs their choice, read by the input() function. The loop will continue unless the user selects to quit the script. 
 
 # #Printing the Cube
